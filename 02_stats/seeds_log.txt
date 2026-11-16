@@ -1,0 +1,11 @@
+seed 42: done in 46s   B drop +0.093   C drop +0.088
+seed  0: done in 48s   B drop +0.095   C drop +0.096
+seed  1: done in 47s   B drop +0.088   C drop +0.088
+seed  2: done in 48s   B drop +0.084   C drop +0.094
+seed  3: done in 48s   B drop +0.085   C drop +0.094
+seed  4: done in 48s   B drop +0.092   C drop +0.085
+seed  5: done in 47s   B drop +0.093   C drop +0.084
+seed  6: done in 44s   B drop +0.084   C drop +0.094
+seed  7: done in 44s   B drop +0.095   C drop +0.092
+seed  8: done in 46s   B drop +0.096   C drop +0.082
+all seeds done in 7.8 min

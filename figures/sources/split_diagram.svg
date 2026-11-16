@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif">
+  <rect width="1000" height="700" fill="#ffffff"/>
+
+  <text x="40" y="50" font-size="25" font-weight="700" fill="#1a1a1a">같은 7,000개를 어떻게 나누었나</text>
+  <line x1="40" y1="66" x2="960" y2="66" stroke="#d8d8d8"/>
+  <text x="40" y="92" font-size="13.5" fill="#666">데이터셋은 하나입니다. 버리는 서열도 없습니다. 바뀌는 것은 "어느 서열이 같은 편에 서는가" 뿐입니다.</text>
+
+  <!-- ======== legend of families ======== -->
+  <text x="40" y="132" font-size="14" font-weight="700" fill="#555">서열 가족 (유사도가 높은 무리)</text>
+  <g>
+    <circle cx="258" cy="127" r="8" fill="#4a7fd4"/><circle cx="278" cy="127" r="8" fill="#4a7fd4"/><circle cx="298" cy="127" r="8" fill="#4a7fd4"/>
+    <text x="312" y="132" font-size="12" fill="#666">가족 1</text>
+    <circle cx="378" cy="127" r="8" fill="#d2691e"/><circle cx="398" cy="127" r="8" fill="#d2691e"/>
+    <text x="412" y="132" font-size="12" fill="#666">가족 2</text>
+    <circle cx="478" cy="127" r="8" fill="#2e8b57"/><circle cx="498" cy="127" r="8" fill="#2e8b57"/><circle cx="518" cy="127" r="8" fill="#2e8b57"/>
+    <text x="532" y="132" font-size="12" fill="#666">가족 3</text>
+    <circle cx="598" cy="127" r="8" fill="#999"/>
+    <text x="612" y="132" font-size="12" fill="#666">단독 (친척 없음)</text>
+  </g>
+
+  <!-- ======== PANEL 1 : random ======== -->
+  <rect x="40" y="158" width="920" height="214" rx="10" fill="#fdf3f0" stroke="#c75b39" stroke-width="2"/>
+  <text x="62" y="188" font-size="16" font-weight="700" fill="#a0360e">① 무작위 분할 — 가족이 갈라진다</text>
+  <text x="62" y="210" font-size="12.5" fill="#7a4030">7,000개를 그냥 섞어서 5등분. 같은 가족이 훈련과 테스트 양쪽으로 흩어집니다.</text>
+
+  <!-- train box -->
+  <rect x="70" y="228" width="420" height="80" rx="7" fill="#ffffff" stroke="#c9c9ce"/>
+  <text x="82" y="248" font-size="12.5" font-weight="700" fill="#444">훈련 (5,600개)</text>
+  <g>
+    <circle cx="96" cy="276" r="9" fill="#4a7fd4"/><circle cx="120" cy="276" r="9" fill="#4a7fd4"/>
+    <circle cx="150" cy="276" r="9" fill="#d2691e"/>
+    <circle cx="180" cy="276" r="9" fill="#2e8b57"/><circle cx="204" cy="276" r="9" fill="#2e8b57"/>
+    <circle cx="234" cy="276" r="9" fill="#999"/><circle cx="258" cy="276" r="9" fill="#999"/>
+    <circle cx="282" cy="276" r="9" fill="#999"/><circle cx="306" cy="276" r="9" fill="#999"/>
+    <circle cx="330" cy="276" r="9" fill="#999"/><circle cx="354" cy="276" r="9" fill="#999"/>
+    <circle cx="378" cy="276" r="9" fill="#999"/><circle cx="402" cy="276" r="9" fill="#999"/>
+    <circle cx="426" cy="276" r="9" fill="#999"/><circle cx="450" cy="276" r="9" fill="#999"/>
+  </g>
+
+  <!-- test box -->
+  <rect x="520" y="228" width="200" height="80" rx="7" fill="#ffffff" stroke="#c9c9ce"/>
+  <text x="532" y="248" font-size="12.5" font-weight="700" fill="#444">테스트 (1,400개)</text>
+  <g>
+    <circle cx="546" cy="276" r="9" fill="#4a7fd4"/>
+    <circle cx="570" cy="276" r="9" fill="#d2691e"/>
+    <circle cx="594" cy="276" r="9" fill="#2e8b57"/>
+    <circle cx="624" cy="276" r="9" fill="#999"/><circle cx="648" cy="276" r="9" fill="#999"/>
+    <circle cx="672" cy="276" r="9" fill="#999"/><circle cx="696" cy="276" r="9" fill="#999"/>
+  </g>
+
+  <!-- leak arrows -->
+  <path d="M546 262 C 520 226, 130 226, 100 262" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="5 3"/>
+  <path d="M570 262 C 545 234, 175 234, 152 262" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="5 3"/>
+  <path d="M594 262 C 570 240, 212 240, 186 262" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="742" y="258" font-size="12.5" font-weight="700" fill="#c0392b">점선 = 같은 가족이</text>
+  <text x="742" y="276" font-size="12.5" font-weight="700" fill="#c0392b">양쪽에 걸친 것 (누출)</text>
+
+  <rect x="70" y="322" width="650" height="34" rx="6" fill="#ffffff" stroke="#c0392b"/>
+  <text x="84" y="344" font-size="13" fill="#333">검증 결과: 훈련-테스트 최대 유사도 =</text>
+  <text x="330" y="344" font-size="14" font-weight="700" fill="#c0392b">0.987</text>
+  <text x="382" y="344" font-size="13" fill="#333">— 거의 같은 서열이 양쪽에 있었다</text>
+
+  <!-- ======== PANEL 2 : cluster ======== -->
+  <rect x="40" y="388" width="920" height="214" rx="10" fill="#eef4fb" stroke="#2f6fc4" stroke-width="2"/>
+  <text x="62" y="418" font-size="16" font-weight="700" fill="#1f4e9c">② 클러스터 분할 — 가족을 통째로 한쪽에</text>
+  <text x="62" y="440" font-size="12.5" fill="#2a5080">유사도가 기준치를 넘는 쌍을 모두 선으로 잇고, 이어진 무리를 쪼개지 않고 배치합니다.</text>
+
+  <rect x="70" y="458" width="420" height="80" rx="7" fill="#ffffff" stroke="#c9c9ce"/>
+  <text x="82" y="478" font-size="12.5" font-weight="700" fill="#444">훈련 (5,600개)</text>
+  <g>
+    <circle cx="96" cy="506" r="9" fill="#4a7fd4"/><circle cx="120" cy="506" r="9" fill="#4a7fd4"/><circle cx="144" cy="506" r="9" fill="#4a7fd4"/>
+    <circle cx="174" cy="506" r="9" fill="#2e8b57"/><circle cx="198" cy="506" r="9" fill="#2e8b57"/><circle cx="222" cy="506" r="9" fill="#2e8b57"/>
+    <circle cx="252" cy="506" r="9" fill="#999"/><circle cx="276" cy="506" r="9" fill="#999"/>
+    <circle cx="300" cy="506" r="9" fill="#999"/><circle cx="324" cy="506" r="9" fill="#999"/>
+    <circle cx="348" cy="506" r="9" fill="#999"/><circle cx="372" cy="506" r="9" fill="#999"/>
+    <circle cx="396" cy="506" r="9" fill="#999"/><circle cx="420" cy="506" r="9" fill="#999"/>
+    <circle cx="444" cy="506" r="9" fill="#999"/>
+  </g>
+  <rect x="86" y="492" width="72" height="28" rx="14" fill="none" stroke="#4a7fd4" stroke-width="2"/>
+  <rect x="164" y="492" width="68" height="28" rx="14" fill="none" stroke="#2e8b57" stroke-width="2"/>
+
+  <rect x="520" y="458" width="200" height="80" rx="7" fill="#ffffff" stroke="#c9c9ce"/>
+  <text x="532" y="478" font-size="12.5" font-weight="700" fill="#444">테스트 (1,400개)</text>
+  <g>
+    <circle cx="552" cy="506" r="9" fill="#d2691e"/><circle cx="576" cy="506" r="9" fill="#d2691e"/>
+    <circle cx="606" cy="506" r="9" fill="#999"/><circle cx="630" cy="506" r="9" fill="#999"/>
+    <circle cx="654" cy="506" r="9" fill="#999"/><circle cx="678" cy="506" r="9" fill="#999"/>
+    <circle cx="702" cy="506" r="9" fill="#999"/>
+  </g>
+  <rect x="542" y="492" width="46" height="28" rx="14" fill="none" stroke="#d2691e" stroke-width="2"/>
+
+  <text x="742" y="498" font-size="12.5" font-weight="700" fill="#1f4e9c">가족 2는 전원 테스트로.</text>
+  <text x="742" y="516" font-size="12.5" font-weight="700" fill="#1f4e9c">걸친 가족이 하나도 없다.</text>
+
+  <rect x="70" y="552" width="650" height="34" rx="6" fill="#ffffff" stroke="#2f6fc4"/>
+  <text x="84" y="574" font-size="13" fill="#333">검증 결과: 훈련-테스트 최대 유사도 =</text>
+  <text x="330" y="574" font-size="14" font-weight="700" fill="#1f4e9c">0.050</text>
+  <text x="382" y="574" font-size="13" fill="#333">— 기준치 0.05 미만, 수학적으로 보장됨</text>
+
+  <!-- ======== footer ======== -->
+  <text x="40" y="640" font-size="13.5" fill="#444">테스트 서열이 "이상하게 생긴 것"으로 바뀐 게 아닙니다. <tspan font-weight="700">가까운 친척이 훈련 쪽에 남지 않도록</tspan> 옮긴 것뿐입니다.</text>
+  <text x="40" y="664" font-size="13.5" fill="#444">그래서 모델은 예측할 때 "비슷한 걸 본 적 있다"에 의지할 수 없게 됩니다.</text>
+  <text x="40" y="688" font-size="12.5" fill="#888">기준치를 0.30 / 0.20 / 0.10 / 0.05 네 단계로 바꿔 모두 수행했습니다. 무작위 분할까지 포함하면 총 5가지.</text>
+</svg>

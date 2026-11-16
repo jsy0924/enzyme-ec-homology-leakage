@@ -1,0 +1,29 @@
+# 용량이 큰 중간 산출물 (코드로 재생성 가능)
+*.npz
+*.tsv
+*.dmnd
+*.fasta
+seq_cache/
+
+# DIAMOND 실행 파일
+diamond
+diamond.exe
+diamond*.tar.gz
+diamond_bin/
+
+# 파이썬
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# 편집기 / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 엑셀 임시 파일
+~$*

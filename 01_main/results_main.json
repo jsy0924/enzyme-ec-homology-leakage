@@ -1,0 +1,135 @@
+{
+  "timestamp": "2026-11-15T15:58:07.803403",
+  "settings": {
+    "n_per_class": 1000,
+    "esm": [
+      "8M",
+      "650M"
+    ],
+    "kmer_k": 4,
+    "thresholds": [
+      0.3,
+      0.2,
+      0.1,
+      0.05
+    ],
+    "n_folds": 5,
+    "min_len": 100,
+    "max_len": 1000,
+    "seed": 42,
+    "n_sequences": 7000
+  },
+  "uniprot": {
+    "release": "unknown",
+    "release_date": "unknown"
+  },
+  "classes_present": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "splits": {
+    "random": {
+      "n_clusters": 7000,
+      "threshold": null,
+      "largest_cluster": null,
+      "n_similar_pairs": null,
+      "max_train_test_jaccard": 0.9874607920646667
+    },
+    "cluster@0.3": {
+      "n_clusters": 5503,
+      "threshold": 0.3,
+      "largest_cluster": 68,
+      "n_similar_pairs": 5186,
+      "max_train_test_jaccard": 0.29895561933517456
+    },
+    "cluster@0.2": {
+      "n_clusters": 5098,
+      "threshold": 0.2,
+      "largest_cluster": 75,
+      "n_similar_pairs": 7506,
+      "max_train_test_jaccard": 0.19935691356658936
+    },
+    "cluster@0.1": {
+      "n_clusters": 4337,
+      "threshold": 0.1,
+      "largest_cluster": 231,
+      "n_similar_pairs": 21364,
+      "max_train_test_jaccard": 0.09980040043592453
+    },
+    "cluster@0.05": {
+      "n_clusters": 3580,
+      "threshold": 0.05,
+      "largest_cluster": 241,
+      "n_similar_pairs": 43453,
+      "max_train_test_jaccard": 0.04992435872554779
+    }
+  },
+  "results": {
+    "A: composition | random": {
+      "accuracy": 0.40385714285714286,
+      "macro_F1": 0.39611935176344737
+    },
+    "B: ESM-2 8M | random": {
+      "accuracy": 0.8048571428571428,
+      "macro_F1": 0.8045214239409805
+    },
+    "C: ESM-2 650M | random": {
+      "accuracy": 0.9364285714285714,
+      "macro_F1": 0.9364221481825641
+    },
+    "A: composition | cluster@0.3": {
+      "accuracy": 0.39914285714285713,
+      "macro_F1": 0.3908268792777711
+    },
+    "B: ESM-2 8M | cluster@0.3": {
+      "accuracy": 0.7681428571428571,
+      "macro_F1": 0.7678810660645417
+    },
+    "C: ESM-2 650M | cluster@0.3": {
+      "accuracy": 0.9128571428571428,
+      "macro_F1": 0.9129480003022702
+    },
+    "A: composition | cluster@0.2": {
+      "accuracy": 0.39571428571428574,
+      "macro_F1": 0.3870626011152793
+    },
+    "B: ESM-2 8M | cluster@0.2": {
+      "accuracy": 0.7592857142857142,
+      "macro_F1": 0.7589373378305156
+    },
+    "C: ESM-2 650M | cluster@0.2": {
+      "accuracy": 0.8992857142857142,
+      "macro_F1": 0.8993140700888189
+    },
+    "A: composition | cluster@0.1": {
+      "accuracy": 0.38642857142857145,
+      "macro_F1": 0.378733587063423
+    },
+    "B: ESM-2 8M | cluster@0.1": {
+      "accuracy": 0.7441428571428571,
+      "macro_F1": 0.7435805411045233
+    },
+    "C: ESM-2 650M | cluster@0.1": {
+      "accuracy": 0.8814285714285715,
+      "macro_F1": 0.8811649087777491
+    },
+    "A: composition | cluster@0.05": {
+      "accuracy": 0.37957142857142856,
+      "macro_F1": 0.37232621276836925
+    },
+    "B: ESM-2 8M | cluster@0.05": {
+      "accuracy": 0.7108571428571429,
+      "macro_F1": 0.7110014201157417
+    },
+    "C: ESM-2 650M | cluster@0.05": {
+      "accuracy": 0.8477142857142858,
+      "macro_F1": 0.847828622881986
+    }
+  },
+  "shuffle_control": 0.1415401866049358
+}
